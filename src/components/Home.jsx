@@ -1,5 +1,5 @@
 import React from 'react';
-import { TileImage } from './static/TileImage';
+import { TileImageThreeCol } from './static/TileImage';
 
 const Home = () => {
   const limit = [1, 2, 3, 4, 5, 6, 7];
@@ -16,7 +16,9 @@ const Home = () => {
       </div>
       <div className="row">
         {limit.map(item =>{
-          return (<TileImage />);
+          return (<TileImageThreeCol
+            index={item}
+          />);
         })}
       </div>
     </div>
