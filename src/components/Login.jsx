@@ -1,15 +1,19 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-// import FacebookLogin from 'react-facebook-login';
+import FacebookLogin from 'react-facebook-login';
+import { saveFacebookLogin } from '../actions/loginActions';
 
 export const Login = withRouter(({ history }) => {
   const gotoQuestions = () => {
     history.push('/questions');
   };
-  // const responseFacebook = (response) => {
-  //   console.log(response);
-
-  // }
+  const responseFacebook = response => {
+    saveFacebookLogin(response).then(() => {
+      history.push('/questions');
+    }).catch(() => {
+      console.warn('error');
+    });
+  };
 
   return (
     <div className="row" style={{ paddingTop: '70px' }}>
@@ -27,12 +31,12 @@ export const Login = withRouter(({ history }) => {
         </div>
         <div className="form-group d-flex justify-content-center">OR</div>
         <div className="form-group">
-          {/* <FacebookLogin
-          appId="632625573863658" //APP ID NOT CREATED YET
-          fields="name,email,picture"
-          callback={responseFacebook}
-          cssClass="form-control"
-        /> */}
+          <FacebookLogin
+            appId="632625573863658" // APP ID NOT CREATED YET
+            fields="name,email,picture"
+            callback={responseFacebook}
+            cssClass="form-control"
+          />
         </div>
         <div className="form-group d-flex justify-content-center">OR</div>
         <div className="form-group">

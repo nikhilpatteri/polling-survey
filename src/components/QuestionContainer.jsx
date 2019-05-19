@@ -42,6 +42,22 @@ const QuestionContainer = () => {
       ],
     },
     {
+      id: '4',
+      question: 'Which is the best IDE',
+      options: [
+        {
+          oId: '001',
+          label: 'Visual Studio',
+          count: '20',
+        },
+        {
+          oId: '002',
+          label: 'Atom',
+          count: '20',
+        },
+      ],
+    },
+    {
       id: '2',
       question: 'Which car is best in India',
       options: [
