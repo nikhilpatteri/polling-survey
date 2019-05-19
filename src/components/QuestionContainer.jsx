@@ -1,6 +1,7 @@
 import React from 'react';
 import { TileContainer } from './TileContainer';
 import { AppHeader } from './static/AppHeader';
+import FooterContainer from './FooterContainer';
 
 const QuestionContainer = () => {
   const limit = [
@@ -80,6 +81,7 @@ const QuestionContainer = () => {
       <TileContainer
         limit={limit}
       />
+      <FooterContainer />
     </div>
   );
 };
